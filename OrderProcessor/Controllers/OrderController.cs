@@ -13,15 +13,19 @@ namespace OrderProcessor.Controllers
     {
         private readonly ILogger<OrderController> _logger;
 
-        public OrderController(ILogger<OrderController> logger)
+        private IOrderLogic orderLogic;
+
+        public OrderController(ILogger<OrderController> logger, IOrderLogic orderLogic)
         {
             _logger = logger;
+            this.orderLogic = orderLogic;
         }
 
         [HttpPost]
         [Route("")]
-        public string Post(Order orderContent)
+        public async Task<string> PostAsync(Order orderContent)
         {
+            await orderLogic.WriteOrder(orderContent);
             return string.Format("Received order: \n {0}", orderContent.OrderContent);
         }
     }

@@ -27,3 +27,9 @@ C:\Users\joshuaharvey\Documents\repos\data-processing\OrderProcessor\obj\Debug\n
 C:\Users\joshuaharvey\Documents\repos\data-processing\OrderProcessor\obj\Debug\net5.0\ref\OrderProcessor.dll
 C:\Users\joshuaharvey\Documents\repos\data-processing\OrderProcessor\obj\Debug\net5.0\OrderProcessor.pdb
 C:\Users\joshuaharvey\Documents\repos\data-processing\OrderProcessor\obj\Debug\net5.0\OrderProcessor.genruntimeconfig.cache
+C:\Users\joshuaharvey\Documents\repos\data-processing\OrderProcessor\bin\Debug\net5.0\Azure.Core.dll
+C:\Users\joshuaharvey\Documents\repos\data-processing\OrderProcessor\bin\Debug\net5.0\Azure.Core.Amqp.dll
+C:\Users\joshuaharvey\Documents\repos\data-processing\OrderProcessor\bin\Debug\net5.0\Azure.Messaging.ServiceBus.dll
+C:\Users\joshuaharvey\Documents\repos\data-processing\OrderProcessor\bin\Debug\net5.0\Microsoft.Azure.Amqp.dll
+C:\Users\joshuaharvey\Documents\repos\data-processing\OrderProcessor\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\joshuaharvey\Documents\repos\data-processing\OrderProcessor\bin\Debug\net5.0\System.Memory.Data.dll
