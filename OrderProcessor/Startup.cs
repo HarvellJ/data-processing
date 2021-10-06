@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Azure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -34,6 +35,11 @@ namespace OrderProcessor
             });
 
             services.AddScoped<IOrderLogic, OrderLogic>();
+            services.AddAzureClients(cfg =>
+            {
+                cfg.AddServiceBusClient(Configuration.GetSection("ServiceBus")).WithCredential(new Azure.Identity.DefaultAzureCredential());
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
