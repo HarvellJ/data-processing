@@ -21,6 +21,13 @@ namespace OrderProcessor.Controllers
             this.orderLogic = orderLogic;
         }
 
+        [HttpGet]
+        [Route("")]
+        public async Task<string> Get(Order orderContent)
+        {
+            return "it works.";
+        }
+
         [HttpPost]
         [Route("")]
         public async Task<string> PostAsync(Order orderContent)
