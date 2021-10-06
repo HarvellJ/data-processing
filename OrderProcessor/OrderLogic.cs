@@ -20,7 +20,7 @@ namespace OrderProcessor
         public OrderLogic(IConfiguration configuration, ServiceBusClient serviceBusClient)
         {
             this.configuration = configuration;
-            serviceBusClient.CreateSender(configuration["serviceBustopicName"]);
+            this.sender = serviceBusClient.CreateSender(configuration["serviceBustopicName"]);
         }
 
         public async Task WriteOrder(Order order)
