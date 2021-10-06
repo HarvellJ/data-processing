@@ -48,8 +48,9 @@ namespace OrderProcessor
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
             }
+
+            app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "OrderProcessor v1"));
 
             app.UseHttpsRedirection();
