@@ -23,7 +23,7 @@ namespace OrderProcessor.Controllers
 
         [HttpGet]
         [Route("")]
-        public async Task<string> Get(Order orderContent)
+        public string Get()
         {
             return "it works.";
         }
