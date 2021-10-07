@@ -29,7 +29,7 @@ namespace OrderProcessor
             {
                 // Use the producer client to send the batch of messages to the Service Bus topic
                 var message = new ServiceBusMessage($"Message {JsonSerializer.Serialize(order)}");
-                message.ApplicationProperties.Add(new KeyValuePair<string, Object>("express", order.Express) );
+                message.ApplicationProperties.Add(new KeyValuePair<string, Object>("express", order.Express.ToString()) );
                 await sender.SendMessageAsync(message);
             }
             finally
