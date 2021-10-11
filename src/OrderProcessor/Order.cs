@@ -8,7 +8,6 @@ namespace OrderProcessor
     public class Order
     {
         public bool Express { get; set; }
-        public bool RequiresAdditionalProcessing { get; set; }
         public string OrderContent { get; set; }
     }
 }
