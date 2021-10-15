@@ -3,10 +3,25 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "webAppName": {
-            "value": "testAppNamejhh"
+            "value": "testOrderAppName"
         },
         "webServicePlanName": {
-            "value": "testPlanNamejh"
+            "value": "testOrderAppPlanName"
+        },
+        "databaseAccounts_orderprocessor_name": {
+            "value": "testorderdb"
+        },
+        "namespaces_jhorderqueuetest_name": {
+            "value": "orderNameSpaceTestPipeline"
+        },
+        "sites_NormalOrders_name": {
+            "value": "normalOrdersFunctionTest"
+        },
+        "sites_expressOrders_name": {
+            "value": "expressOrdersFunctionTest"
+        },
+        "serverfarms_ASP_dataprocessingpipeline_name": {
+            "value": "normalOrdersFunctionTestPipeline"
         }
     }
 }
