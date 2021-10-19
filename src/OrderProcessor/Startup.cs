@@ -27,7 +27,7 @@ namespace OrderProcessor
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddApplicationInsightsTelemetry();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -37,7 +37,7 @@ namespace OrderProcessor
             services.AddScoped<IOrderLogic, OrderLogic>();
             services.AddAzureClients(cfg =>
             {
-                cfg.AddServiceBusClient(Configuration.GetSection("ServiceBus")).WithCredential(new Azure.Identity.DefaultAzureCredential());
+                cfg.AddServiceBusClient(Configuration.GetSection("ServiceBusConnection")).WithCredential(new Azure.Identity.DefaultAzureCredential());
             });
 
         }
