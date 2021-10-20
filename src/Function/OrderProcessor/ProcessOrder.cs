@@ -17,7 +17,7 @@ namespace OrderProcessor
         }
 
         [FunctionName("ProcessOrder")]
-        public void Run([ServiceBusTrigger("orderQueue", Connection = "storageQueueSetting")]string queueItem, [CosmosDB(
+        public void Run([ServiceBusTrigger("orderTopic", "placeholder", Connection = "storageQueueSetting")]string queueItem, [CosmosDB(
                 databaseName: "ordersDatabase",
                 collectionName: "Orders",
                 ConnectionStringSetting = "CosmosDBConnection")]out dynamic document,
