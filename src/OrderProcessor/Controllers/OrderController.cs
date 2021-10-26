@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.ApplicationInsights;
+using Microsoft.ApplicationInsights.DataContracts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -35,7 +36,10 @@ namespace OrderProcessor.Controllers
         [Route("")]
         public async Task<string> PostAsync(Order orderContent)
         {
-            telemetryClient.TrackEvent("OrderPlaced", new Dictionary<string, string> {{"expressTier", "true" } });
+            EventTelemetry eventTelemetry = new EventTelemetry();
+            eventTelemetry.Name = "OrderPlaced";
+            eventTelemetry.Properties["expressTier"] = orderContent.Express.ToString();
+            telemetryClient.TrackEvent(eventTelemetry);
             await orderLogic.WriteOrder(orderContent);
             return string.Format("Received order: \n {0}", orderContent.OrderContent);
         }
