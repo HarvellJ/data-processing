@@ -35,7 +35,7 @@ namespace OrderProcessor.Controllers
         [Route("")]
         public async Task<string> PostAsync(Order orderContent)
         {
-            telemetryClient.TrackEvent("OrderPlaced");
+            telemetryClient.TrackEvent("OrderPlaced", new Dictionary<string, string> {{"expressTier", "true" } });
             await orderLogic.WriteOrder(orderContent);
             return string.Format("Received order: \n {0}", orderContent.OrderContent);
         }
