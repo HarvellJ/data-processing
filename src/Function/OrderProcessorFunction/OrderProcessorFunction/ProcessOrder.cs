@@ -52,7 +52,7 @@ namespace OrderProcessorFunction
              ILogger log)
         {
             document = new { order = mySbMsg };
-            this.telemetryClient.TrackEvent("OrderReceived");
+            this.telemetryClient.TrackEvent("OrderProcessed");
             log.LogInformation($"C# ServiceBus queue trigger function processed message: {mySbMsg}");
         }
     }
