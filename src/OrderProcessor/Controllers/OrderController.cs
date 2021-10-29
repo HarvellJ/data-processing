@@ -36,11 +36,13 @@ namespace OrderProcessor.Controllers
         [Route("")]
         public async Task<string> PostAsync(Order orderContent)
         {
+            await orderLogic.WriteOrder(orderContent);
+
             EventTelemetry eventTelemetry = new EventTelemetry();
             eventTelemetry.Name = "OrderPlaced";
             eventTelemetry.Properties["expressTier"] = orderContent.Express.ToString();
             telemetryClient.TrackEvent(eventTelemetry);
-            await orderLogic.WriteOrder(orderContent);
+
             return string.Format("Received order: \n {0}", orderContent.OrderContent);
         }
     }

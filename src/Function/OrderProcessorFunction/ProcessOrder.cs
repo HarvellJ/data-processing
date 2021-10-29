@@ -44,7 +44,7 @@ namespace OrderProcessorFunction
         }
 
         [FunctionName("ProcessOrder")]
-        public void Run([ServiceBusTrigger("orderTopic", "standardSubscription", Connection = "storageAccountSetting")]string mySbMsg,
+        public void Run([ServiceBusTrigger("orderTopic", "expressSubscription", Connection = "storageAccountSetting")]string mySbMsg,
              [CosmosDB(
                 databaseName: "orderDatabase",
                 collectionName: "Orders",
