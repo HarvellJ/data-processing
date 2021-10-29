@@ -1,4 +1,4 @@
-# data-processing
+# Data Processing Pipeline Reference
 Note - this is still a work in progress.
 
 This repo contains the source for infrastructure and code required to create a simple data-processing pipeline in Azure. It contains the following components:
